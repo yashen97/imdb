@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Table(name = "MOVIE")
@@ -23,7 +24,9 @@ public class Movie {
             }
     )
     private String id;
+
+    private String imdbNo;
     private String name;
-    private String temp;
+    private Date releaseDate;
 
 }
