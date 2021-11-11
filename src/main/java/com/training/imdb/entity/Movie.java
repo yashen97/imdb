@@ -5,11 +5,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Table(name = "MOVIE")
 @Entity
-public class Movie {
+public class Movie{
     @Id
     @Column(name="ID", unique = true, nullable = false)
     @GeneratedValue(generator = "UUID")
@@ -28,5 +30,9 @@ public class Movie {
     private String imdbNo;
     private String name;
     private Date releaseDate;
+
+    @OneToMany(targetEntity = Award.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "AWARD_FK",referencedColumnName ="id")
+    private List<Award> awardList;
 
 }

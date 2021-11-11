@@ -1,4 +1,4 @@
 package com.training.imdb.service;
 
-public class xx {
+public interface AwardService {
 }
