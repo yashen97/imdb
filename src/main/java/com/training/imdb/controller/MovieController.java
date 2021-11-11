@@ -24,4 +24,10 @@ public class MovieController {
         List<Movie> response=movieService.getAll();
         return response;
     }
+
+    @GetMapping("{name}")
+    public Movie getByName(@PathVariable String name){
+        Movie response=movieService.getByName(name);
+        return response;
+    }
 }

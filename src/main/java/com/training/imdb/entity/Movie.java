@@ -6,7 +6,6 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Table(name = "MOVIE")
@@ -32,7 +31,12 @@ public class Movie{
     private Date releaseDate;
 
     @OneToMany(targetEntity = Award.class,cascade = CascadeType.ALL)
-    @JoinColumn(name = "AWARD_FK",referencedColumnName ="id")
+    @JoinColumn(name = "MOVIE_FK",referencedColumnName ="id")
     private List<Award> awardList;
+
+    @ManyToOne
+    @JoinColumn(name = "PCID",referencedColumnName = "id")
+    private ProductionCompany productionCompany;
+
 
 }

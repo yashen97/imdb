@@ -8,4 +8,6 @@ public interface MovieService {
     Movie save(Movie movie);
 
     List<Movie> getAll();
+
+    Movie getByName(String name);
 }

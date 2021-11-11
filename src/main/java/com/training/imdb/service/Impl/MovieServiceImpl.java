@@ -22,4 +22,9 @@ public class MovieServiceImpl implements MovieService {
     public List<Movie> getAll() {
         return movieRepository.findAll();
     }
+
+    @Override
+    public Movie getByName(String name) {
+        return movieRepository.findMovieByName(name);
+    }
 }
